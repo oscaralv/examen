@@ -9,7 +9,7 @@ import static mx.unam.dgpe.sample.controller.RestUtil.*;
 public class TestMyController extends AbstractVerticle {
     private static final Logger logger = Logger.getLogger(TestMyController.class);
     
-    @Test
+//    @Test
     public void ok() throws Exception {
 //        String result = sendGet("https://www.binance.com/api/v3/ticker/price?symbol=BTCUSDT");
 	String result = sendGet("http://192.168.10.129:5050/api/calculadora?operacion=suma&valor1=10&valor2=20");
