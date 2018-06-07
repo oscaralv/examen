@@ -44,6 +44,9 @@ backend site_backend
         server lamp1 localhost:2020 check
         server lamp2 localhost:3030 check
 	server lamp3 localhost:4040 check
+	server lamp3 localhost:5050 check
+	server lamp3 localhost:6060 check
+	server lamp3 localhost:7070 check
 	
 # detener e iniciar el serivcio haproxy
 sudo service haproxy stop
