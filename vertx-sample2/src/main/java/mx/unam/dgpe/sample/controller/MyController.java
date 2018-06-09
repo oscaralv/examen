@@ -110,6 +110,7 @@ public class MyController extends AbstractVerticle {
         info.put("resultado", resultado);
         info.put("nombre", "oscar");
         info.put("edad", "21");
+
 	info.put("Current Node IP", request.localAddress().host());
 	info.put("Caller IP", request.remoteAddress().host());
 	info.put("Absolute url", request.absoluteURI());
