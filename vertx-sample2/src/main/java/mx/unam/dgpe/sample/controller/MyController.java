@@ -65,7 +65,7 @@ public class MyController extends AbstractVerticle {
         String operacion = request.getParam("operacion");
         int valor1 = Integer.parseInt(request.getParam("valor1"));
         int valor2 = Integer.parseInt(request.getParam("valor2"));
-        String jsonResponse = calcula(operacion,valor1,valor2);
+        String jsonResponse = calcula(operacion,valor1,valor2,request);
         response.setStatusCode(200).
         putHeader("content-type", "application/json; charset=utf-8").
         end(jsonResponse);
@@ -86,7 +86,7 @@ public class MyController extends AbstractVerticle {
         return Json.encodePrettily(info);
     }
 
-    private String calcula(String operacion, int num1, int num2){
+    private String calcula(String operacion, int num1, int num2, HttpServerRequest request){
         int resultado = 0;
 
         switch(operacion){
@@ -110,7 +110,13 @@ public class MyController extends AbstractVerticle {
         info.put("resultado", resultado);
         info.put("nombre", "oscar");
         info.put("edad", "21");
-	info.put("variable",pba);
+	info.put("Current Node IP", request.localAddress().host());
+	info.put("Caller IP", request.remoteAddress().host());
+	info.put("Absolute url", request.absoluteURI());
+	info.put("path", request.path());
+	info.put("query", request.query());
+	info.put("uri", request.uri());
+//	info.put("variable",pba);
 	return Json.encodePrettily(info);
     }
 
